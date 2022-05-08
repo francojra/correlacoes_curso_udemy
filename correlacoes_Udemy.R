@@ -17,3 +17,17 @@ View(Orange)
 # Checar dados com gráfico de pontos -------------------------------------------------------------------------------------------------------
 
 plot(Orange$age, Orange$circumference)
+
+# Correlação de Pearson --------------------------------------------------------------------------------------------------------------------
+
+cor(Orange$age, Orange$circumference) # Correlação geral
+
+# Teste estatístico da correlação ----------------------------------------------------------------------------------------------------------
+
+cor.test(Orange$age, Orange$circumference) # Padrão = Pearson
+
+# Outros tipos de correlação ---------------------------------------------------------------------------------------------------------------
+
+cor(Orange$age, Orange$circumference, method = "pearson")
+cor.test(Orange$age, Orange$circumference, method = "kendall")
+cor.test(Orange$age, Orange$circumference, method = "spearman")
