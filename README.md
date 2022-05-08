@@ -16,15 +16,15 @@
 7. Correlações com múltiplas variáveis;
 8. Carregar dados;
 9. Matriz de correlação:
-- Carregar pacote;
+- Carregar pacote corrplot;
 - Dados para matriz;
 - Tipos de matrizes;
 - Posições da matriz.
 10. Matriz e gráficos mais complexos:
-- Carregar pacote;
+- Carregar pacote Hmisc;
 - Matris de dados;
 - Gráfico de matriz.
 11. Alternativa para matriz:
-- Carregar pacote;
+- Carregar pacote PerformanceAnalytics;
 - Dados;
 - Gráfico - Quadro de correlações.
