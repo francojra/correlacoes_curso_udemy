@@ -1,5 +1,5 @@
 
-# Correlações -------------------------------------------------------------------------------------------------------
+# Correlações simples e múltiplas -------------------------------------------------------------------------------------------------------
 # Autoria do script: Jeanne Franco ---------------------------------------------------------------------------------------------------------
 # Data do script: 07/05/22 -----------------------------------------------------------------------------------------------------------------
 # Referência: Curso Udemy ------------------------------------------------------------------------------------------------------------------
@@ -63,7 +63,7 @@ corrplot(m, method = "ellipse") # Elipses
 corrplot(m, method = "shade") # Tons
 corrplot(m, method = "number") # Números dos valores das correlações
 
-### Posições
+### Posições da matriz
 
 corrplot(m, type = "upper") 
 corrplot(m, type = "lower") 
@@ -83,7 +83,7 @@ m
 m$r # Valores de correlação
 m$P # Valores de p
 
-### Gráfico
+### Gráfico de matriz
 
 corrplot(m$r, p.mat = m$p, sig.level = 0.005)
 corrplot(m$r, p.mat = m$p, sig.level = 0.001,
@@ -96,8 +96,12 @@ corrplot(m$r, p.mat = m$p, sig.level = 0.001,
 install.packages("PerformanceAnalytics")
 library(PerformanceAnalytics)
 
+### Dados
+
 md <- mtcars[ , c(1, 3, 4, 5, 6, 7)] # Filtra algumas colunas e seleciona todas as linhas
 md
+
+### Gráfico - Quadro de correlações
 
 chart.Correlation(md, histogram = TRUE)
 
