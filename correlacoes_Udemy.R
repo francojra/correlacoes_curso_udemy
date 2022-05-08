@@ -86,9 +86,22 @@ m$P # Valores de p
 ### Gráfico
 
 corrplot(m$r, p.mat = m$p, sig.level = 0.005)
-corrplot(m$r, p.mat = m$p, sig.level = 0.005,
+corrplot(m$r, p.mat = m$p, sig.level = 0.001,
          method = "number", type = "upper")
 
 # Alternativa para matriz ------------------------------------------------------------------------------------------------------------------
 
+### Carregar pacote
 
+install.packages("PerformanceAnalytics")
+library(PerformanceAnalytics)
+
+md <- mtcars[ , c(1, 3, 4, 5, 6, 7)] # Filtra algumas colunas e seleciona todas as linhas
+md
+
+chart.Correlation(md, histogram = TRUE)
+
+### A distribuição de cada grupo está na diagonal
+### Metade inferior: gráficos de pontos com linhas de aproximação
+### Metade superior: Valores das correlações
+### Cada nível de significância está associada aos símbolos dos asteriscos
