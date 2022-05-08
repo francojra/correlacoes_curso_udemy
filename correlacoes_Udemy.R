@@ -34,7 +34,7 @@ cor.test(Orange$age, Orange$circumference, method = "spearman")
 
 # Correlações com múltiplas variáveis ------------------------------------------------------------------------------------------------------
 
-### Matriz de correlação
+### Matriz de correlação: correlações entre múltiplas variáveis
 
 # Carregar dados ---------------------------------------------------------------------------------------------------------------------------
 
@@ -45,8 +45,12 @@ View(mtcars)
 
 cor(mtcars)
 
+### Carregar pacote
+
 library(corrplot)
 ?corrplot
+
+### Dados para matriz
 
 m <- cor(mtcars)
 View(m)
@@ -64,3 +68,27 @@ corrplot(m, method = "number") # Números dos valores das correlações
 corrplot(m, type = "upper") 
 corrplot(m, type = "lower") 
 corrplot(m, type = "lower", method = "number")
+
+# Matriz e gráficos mais complexos ---------------------------------------------------------------------------------------------------------
+
+### Carregar pacote
+
+library(Hmisc)
+
+### Matriz
+
+m <- rcorr(as.matrix(mtcars)) # Retorna matriz com valores de correlação, n e valores de p
+m
+
+m$r # Valores de correlação
+m$P # Valores de p
+
+### Gráfico
+
+corrplot(m$r, p.mat = m$p, sig.level = 0.005)
+corrplot(m$r, p.mat = m$p, sig.level = 0.005,
+         method = "number", type = "upper")
+
+# Alternativa para matriz ------------------------------------------------------------------------------------------------------------------
+
+
